@@ -46,7 +46,7 @@ Some scripts use `geopandas` and geospatial dependencies, which may be easier to
 | `dismip/dismip_data/idps.xlsx` | Conflict-related IDP time series |
 | `data/geospatial/gadm36_levels.gpkg` | GADM GeoPackage with `level0` layer |
 
-`merge_model_outputs.py` additionally expects raw contributor-specific CSV/XLSX files (e.g. `dismip_zimmermann_final.csv`, `dismip_meiler_final.xlsx`, `dismip_riedel.csv`, `dismip_kam_final.xlsx`, and `dismip_cima.xlsx`) under `dismip/dismip_data/`. See the script for the complete input list. `process_idmc_gidd_records.py` reads GIDD Excel workbooks under `dismip/new_idmc_data/` and expects the `1_Disaggregated_Data` worksheet. Avoid placing unrelated XLSX files in that directory when running it.
+`merge_model_outputs.py` additionally expects raw contributor-specific CSV/XLSX files (e.g. `dismip_zimmermann_1m.csv`, `dismip_pred_test.csv`,`dismip_meiler_final.xlsx`, `dismip_riedel.csv`, `dismip_kam_final.xlsx`, and `dismip_cima.xlsx`) under `dismip/dismip_data/`. See the script for the complete input list. `process_idmc_gidd_records.py` reads GIDD Excel workbooks under `dismip/new_idmc_data/` and expects the `1_Disaggregated_Data` worksheet. Avoid placing unrelated XLSX files in that directory when running it. Note that CIMA data is not uploaded here.
 
 Other scripts may require additional inputs: inspect their input constants at the top of each file. The input schemas and scientific assumptions have **not** been standardized across all scripts.
 
@@ -84,10 +84,7 @@ Figures and intermediate results are generally saved in `dismip/output/`. Some p
 | `plot_horn_displacement_map.py` | Horn of Africa overview map with displacement/IDP time series |
 
 ## Reproducibility notes
-
-- Scripts were **path-cleaned and syntax-checked**, but could not be executed end-to-end because the original datasets and geospatial files were not supplied.
-- Scientific calculations, filters, figures and model-specific uncertainty handling were intentionally retained. **The scripts are not guaranteed to be mutually consistent** about IDMC columns, DFO allocation methods, or observational benchmark periods; check these against the manuscript before publication.
-- The GADM input referenced in the original map script is **GADM 3.6**, despite possible references elsewhere to GADM 4.1. To use GADM 4.1, confirm layer names, ISO identifiers and boundaries before switching files.
+- The GADM input referenced in the original map script is GADM 4.1. To use GADM 4.1, confirm layer names, ISO identifiers and boundaries before switching files.
 - The GIDD-processing script is exploratory and contains multiple sequential analyses; inspect its intermediate outputs and filtering assumptions before treating it as a production pipeline.
 - Check licensing for GADM, IDMC, DFO, and contributor datasets before distributing them. Only code is included here.
 
