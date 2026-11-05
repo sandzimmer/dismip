@@ -91,6 +91,3 @@ Figures and intermediate results are generally saved in `dismip/output/`. Some p
 - The GIDD-processing script is exploratory and contains multiple sequential analyses; inspect its intermediate outputs and filtering assumptions before treating it as a production pipeline.
 - Check licensing for GADM, IDMC, DFO, and contributor datasets before distributing them. Only code is included here.
 
-## License and citation
-
-Add your preferred repository license, manuscript citation and data-source acknowledgments before public release.
