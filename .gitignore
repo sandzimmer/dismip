@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+dismip/output/
+dismip/dismip_data/
+dismip/new_idmc_data/
+data/
+.env

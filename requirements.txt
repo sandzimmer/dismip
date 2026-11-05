@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+scipy
+openpyxl
+geopandas
+fiona
+rasterio
+regionmask
+cf_xarray
+seaborn
