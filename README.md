@@ -1,4 +1,4 @@
-# Horn of Africa flood-induced displacement model comparison
+# Scripts and Data for Manuscript: How (well) can we quantify flood-induced displacement risk? A first intercomparison of models in the Horn of Africa
 
 Reproducible Python scripts for preparing model comparison datasets and producing figures for Ethiopia (ETH), Somalia (SOM), and Sudan (SDN). The original analysis spans 2008–2021, with additional observational or out-of-sample periods in some scripts.
 
@@ -21,8 +21,6 @@ dismip/dismip_data/              Model input tables and merged outputs (not incl
 dismip/new_idmc_data/            Updated IDMC records and standardized inputs (not included)
 dismip/output/                   Generated figures and tables (not included)
 data/                            DFO and other observation inputs (not included)
-  zimd/                          ZIM-D prediction exports (not included)
-  geospatial/                    GADM GeoPackage (not included)
 ```
 
 All paths are relative to the repository root, determined from the script location. **No user-specific computer or HPC paths are required.** Run scripts from any working directory, provided the repository structure above is maintained.
@@ -45,15 +43,10 @@ Some scripts use `geopandas` and geospatial dependencies, which may be easier to
 | `dismip/dismip_data/aae.csv` | Model annual average exposure |
 | `dismip/dismip_data/pop.csv` | Model population estimates |
 | `dismip/dismip_data/displacements.csv` | Annual modelled displacements |
-| `data/dfo_country_displacements.csv` | Country-allocated DFO displacement records |
-| `dismip/new_idmc_data/annual_country_displacements.csv` | Updated annual IDMC records (including `ISO3`, `Year`, `displacements_filtered` where required) |
-| `data/zimd/dismip_pred_test.csv` | ZIM-D predictions |
-| `dismip/new_idmc_data/flood_event_model_inputs_standardized_h08.csv` | H08 standardized verification inputs |
-| `dismip/new_idmc_data/flood_event_model_inputs_standardized_watergap2-2e.csv` | WaterGAP standardized verification inputs |
 | `dismip/dismip_data/idps.xlsx` | Conflict-related IDP time series |
 | `data/geospatial/gadm36_levels.gpkg` | GADM GeoPackage with `level0` layer |
 
-`merge_model_outputs.py` additionally expects raw contributor-specific CSV/XLSX files (e.g. `dismip_zimmermann_final2.csv`, `dismip_meiler_final.xlsx`, `dismip_riedel.csv`, `dismip_kam_final.xlsx`, and `dismip_cima.xlsx`) under `dismip/dismip_data/`. See the script for the complete input list. `process_idmc_gidd_records.py` reads GIDD Excel workbooks under `dismip/new_idmc_data/` and expects the `1_Disaggregated_Data` worksheet. Avoid placing unrelated XLSX files in that directory when running it.
+`merge_model_outputs.py` additionally expects raw contributor-specific CSV/XLSX files (e.g. `dismip_zimmermann_final.csv`, `dismip_meiler_final.xlsx`, `dismip_riedel.csv`, `dismip_kam_final.xlsx`, and `dismip_cima.xlsx`) under `dismip/dismip_data/`. See the script for the complete input list. `process_idmc_gidd_records.py` reads GIDD Excel workbooks under `dismip/new_idmc_data/` and expects the `1_Disaggregated_Data` worksheet. Avoid placing unrelated XLSX files in that directory when running it.
 
 Other scripts may require additional inputs: inspect their input constants at the top of each file. The input schemas and scientific assumptions have **not** been standardized across all scripts.
 
